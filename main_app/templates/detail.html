@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+          <div class="treasure panel panel-default">
+                <div class="panel-heading">
+	          <h3 class="panel-title ">{{treasure.name}}</h3>
+	        </div>
+
+	        <div class="panel-body text-center">
+                  <div class = "treasure-photo-detail">
+		    <img src="{{ treasure.image.url}}" height="200"> 
+	          </div>
+		  
+		  <table class="treasure-table">
+	            <tr>
+		      <th>
+		        <img src="{% static "images/fl.png" %}">
+			Materials:
+	              </th>
+		      <td>{{treasure.material}}</td>
+		    <tr>
+		  </table>
+                    <button id = "likes" data-id="{{treasure.id}}" class="btn btn-mini btn-danger glyphicon glyphicon-heart" type="button">
+                  {% if treasure.likes > 0 %}{{treasure.likes}}{% endif %}
+                    </button>
+		</div>  
+	      </div>
+{% endblock %}
+<!--
+</main>
+
+
+</body>
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+	        <p class="text-muted">&copy; Travel Tracker 2016</p>
+            </div>
+        </footer>
+</html-->

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="panel panel-form">
+    <h3 class="panel-title">Search Treasure</h3>
+    <form id="search-form" method="get" action="">
+        <input type="text" id="search-text" />
+	<input class="btn btn-primary" type="submit" value="Submit" />
+    </form>
+    <br>
+    <ul id="result-list" class="list-group">
+    </ul>
+</div>
+{% endblock%}

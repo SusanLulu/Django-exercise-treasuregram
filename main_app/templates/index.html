@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+        <div class = "row">
+	  {% for treasure in treasures %}
+	    <div class="col-md-4">
+	       <a href="/{{treasure.id}}/">
+	      <div class="treasure panel panel-default">
+                <div class="panel-heading">
+	          <h2 class="panel-title ">{{treasure.name}}</h2>
+	          <a class="panel-username" href="/user/{{treasure.user.username}}/">by:{{treasure.user.username}}</a>
+		</div>
+
+	        <div class="panel-body text-center">
+		 <a href="/{{treasure.id}}/">
+                  <div class = "treasure-photo">
+		    <img src="{{ treasure.image.url}}" height="100"> 
+                <button id = "likes" data-id="{{treasure.id}}" class="btn btn-mini btn-danger glyphicon glyphicon-heart" type="button">
+                  {% if treasure.likes > 0 %}{{treasure.likes}}{% endif %}
+                </button>
+	          </div>
+		 </a>
+	        </div>
+	      </div>
+	      </div>
+	      </a>
+	     {% if forloop.counter|divisibleby:3 %}
+	    </div><div class = "row">
+             {% endif %}
+	     {% endfor %}
+	  </div>
+             
+
+	      <div class="treasure panel panel-default">
+                <div class="panel-heading">
+	          <h3 class="panel-title ">Add Treasure</h3>
+	        </div>
+	        <div class="panel-body">
+		  <form enctype="multipart/form-data"  action="post_url/" method="post" >
+		  {% csrf_token %}
+		  <div class="field-wrapper">
+		  {{form.as_p}}
+		  </div>
+		  <input type="submit" value="Submit" />
+		  </form>
+		</div>
+	      </div>	
+{% endblock %}
+
+<!--
+	</main>
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+	        <p class="text-muted">&copy; Travel Tracker 2016</p>
+            </div>
+	</footer>
+
+    </body>
+</html>
+-->

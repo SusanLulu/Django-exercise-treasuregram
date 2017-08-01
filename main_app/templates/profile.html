@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<h1>{{ username }}</h1><br>
+
+          <div class = "row">
+	  {% for treasure in treasures %}
+	    <div class="col-md-4">
+	      <div class="treasure panel panel-default">
+	       <a href="/{{treasure.id}}/">
+                <div class="panel-heading">
+	          <h3 class="panel-title ">{{treasure.name}}</h3>
+	        </div>
+
+	        <div class="panel-body text-center">
+                  <div class = "treasure-photo">
+		    <img src="{{ treasure.image.url}}" height="100"> 
+	          </div>
+	        </div>
+	      </div>
+	      </div>
+	      </a>
+	     {% if forloop.counter|divisibleby:3 %}
+	    </div><div class = "row">
+             {% endif %}
+	     {% endfor %}
+	  </div>
+
+{% endblock %}
