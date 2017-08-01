@@ -13,8 +13,9 @@
 ------------------------
 #### Run the project:
 > (inside terminal) cd Treasuregram
-</br>
+
 > python manage.py runserver
+
 ----------
 #### Reference:
 1. CodeSchool Django
