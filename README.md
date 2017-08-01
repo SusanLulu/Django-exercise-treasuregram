@@ -12,7 +12,8 @@
 - classify by author
 ------------------------
 #### Run the project:
->(inside terminal) cd Treasuregram
+> (inside terminal) cd Treasuregram
+</br>
 > python manage.py runserver
 ----------
 #### Reference:
