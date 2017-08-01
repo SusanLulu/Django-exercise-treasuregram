@@ -4,9 +4,9 @@
 
 -----------------
 #### Function:
-- Bootstrap column
+- column division using Bootstrap
 - upload data from local
-- Register & log in
+- register & log in
 - like & sum up
 - subview
 - classify by author
